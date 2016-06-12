@@ -1,0 +1,11 @@
+{
+  "name": "photogalleries-blog",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "giTo",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0"
+  }
+}
