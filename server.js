@@ -1,10 +1,10 @@
-const express    = require('express');
-const app        = express(app);
-const bodyParser = require('body-parser');
-const port       = process.env.PORT || 8080;
-const path       = require('path');
-const exphbs     = require('express-handlebars');
-const imgEngine  = require('./app/templateEngine');
+const express        = require('express');
+const app            = express(app);
+const bodyParser     = require('body-parser');
+const port           = process.env.PORT || 8080;
+const path           = require('path');
+const exphbs         = require('express-handlebars');
+const contentEngine  = require('./app/templateEngine');
 
 
 const router = express.Router();
@@ -17,7 +17,9 @@ app.use( "/public", express.static(path.join(__dirname + '/public')));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-app.get('/home', function(req, res){
+//ROUTES
+
+app.get('/', function(req, res){
   res.render('home');
 });
 
@@ -31,7 +33,7 @@ app.get('/blog', function(req, res){
 
 app.get('/galleries', function(req, res){
 
-  res.render('galleries', {imgs: imgEngine.getImgs()});
+  res.render('galleries', {imgs: contentEngine.getImgs()});
 });
 
 
