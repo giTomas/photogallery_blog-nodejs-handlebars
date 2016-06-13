@@ -1,7 +1,6 @@
 <!-- <h1> Galéria </h1> -->
 <div class="l-row">
   {{#each imgs}}
-
     <div class="l-item-1-4 c-image js-image" data-url="{{ urlImg }}">
       <img src="{{ urlThumb }}">
       <figcaption class="c-image__figcaption">
@@ -19,11 +18,12 @@
   {{/each}}
   <p class="text-green"> Fotografie: <a class="link" href="https://unsplash.com/">unsplash.com</a></p>
 </div>
-  <div id="js-modal" class="modal"></div>
-  <script id="js-modal-tmp" type="text/x-handlebars-template">
-    <div class="modal__container">
-      <img id="js-modal-img" class="c-modal__img" alt="" src="{{ url }}">
-      <div class="modal__ctrls">
-      </div>
+
+<div id="js-modal" class="modal"></div>
+<script id="js-modal-tmp" type="text/x-handlebars-template">
+  <div class="modal__container">
+    <img id="js-modal-img" class="c-modal__img" alt="" src="{{ url }}">
+    <div class="modal__ctrls">
     </div>
-  </script>
+  </div>
+</script>
