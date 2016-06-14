@@ -2,17 +2,17 @@
 <div class="l-row">
 
   {{#each posts}}
-  <div class="l-item-1-2 c-post">
+  <div class="l-item-1-2 c-postList">
     <div class="c-post__container">
-      <img class="c-post__img" src="{{thumb}}" alt="">
-      <div class="c-post__text">
+      <img class="c-postList__thumb" src="/{{thumb}}" alt="">
+      <div class="c-postList__text">
         <a href="/post/{{id}}">
-          <h3 class="c-post__title">{{ title }}</h3>
+          <h3 class="c-postList__title">{{ title }}</h3>
         </a>
-        <h4 class="c-post__publication">{{ published }}</h4>
+        <h4 class="c-postList__publication">{{ published }}</h4>
         <div class="c-tags">
           {{#each tags}}
-            <span class="c-tags__tag"><a href="/tags/{{tag}}">{{tag}}</a></span>
+            <a class="c-tags__tag" href="/tags/{{tag}}">{{tag}}</a>
           {{/each}}
         </div>
       </div>

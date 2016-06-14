@@ -1,5 +1,6 @@
-const img  = require('./data/img.json');    //load JSON data
-const blog = require('./data/blog.json');
+const img     = require('./data/img.json');    //load JSON data
+const blog    = require('./data/blog.json');
+const authors = require('./data/authors.json');
 
 //const imgList = img.imgList;
 
@@ -27,15 +28,15 @@ exports.getPost = function(id) {
   }
 }
 
-// TODO get all tags in posts
+// get all tags in posts
 
 exports.getAllTags = function(){
   const tags = [];
   for (var i = 0; i < blog.length; i++) {
     var postTags = blog[i].tags;
-    for (var j = 0; j < postTags.length; i++) {
-      if (!tags.includes(postTags[j].tag)) {
-        tags.push(blog[i]);
+    for (var j = 0; j < postTags.length; j++) {
+      if (tags.indexOf(postTags[j].tag) === -1) {
+        tags.push(postTags[j].tag);
       }
     }
   }
@@ -56,3 +57,10 @@ exports.getPostsByTag = function(tag){
   }
   return byTag;
 }
+
+
+// TODO authors
+
+// TODO dipslay posts by authors
+
+// TODO

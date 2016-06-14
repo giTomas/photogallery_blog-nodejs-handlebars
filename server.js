@@ -5,12 +5,13 @@ const bodyParser     = require('body-parser');
 const port           = process.env.PORT || 8080;
 const path           = require('path');
 const exphbs         = require('express-handlebars');
-const contentEngine  = require('./app/contentEngine');
+//const contentEngine  = require('./app/contentEngine');
 
 
-const router = express.Router();
+//const router = express.Router();
 
 //config------------------------------------------------------
+
 app.use( "/public", express.static(path.join(__dirname + '/public')));
 //app.use(bodyParser.urlencoded({'extended':'true'}));
 //app.use(bodyParser.json());
@@ -18,8 +19,11 @@ app.use( "/public", express.static(path.join(__dirname + '/public')));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-//ROUTES
+//ROUTES-------------------------------------------------------
 
+require('./app/routes')(app);
+
+/*
 app.get('/', function(req, res){
   res.render('home', {title: "Úvod"});
 });
@@ -49,6 +53,6 @@ app.get('/tags/:id', function(req, res){
 })
 
 //app.use(express.static('public'));
-
+*/
 app.listen(port);
 console.log('App is listennig on port 8080');

@@ -1,19 +1,26 @@
-
-<div class="l-row">
-  {{tags}}
-
+<div class="l-row l-space">
+  <div class="c-tags__container">
+    {{#each allTags}}
+      <a class="c-tags__tag" href="/tags/{{this}}">{{this}}</a>
+    {{/each}}
+  </div>
   {{#each posts}}
-  <div class="l-item-1-2 c-post">
-    <div class="c-post__container">
-      <img class="c-post__img" src="{{thumb}}" alt="">
-      <div class="c-post__text">
-        <a href="/post/{{id}}">
-          <h3 class="c-post__title">{{ title }}</h3>
-        </a>
-        <h4 class="c-post__publication">{{ published }}</h4>
-        <div class="c-tags">
+  <div class="l-item-1-2 c-postList">
+    <div class="c-postList__container">
+      <img class="c-postList__thumb" src="{{thumb}}" alt="">
+      <div class="c-postList__text">
+        <header>
+          <a href="/post/{{id}}">
+            <h3 class="c-postList__title">{{ title }}</h3>
+          </a>
+          <h4 class="c-postList__authorPub">
+            <a href="{{authorLink}}" class="c-postList__author">{{ author }}</a>
+            <span class="c-postList__publication">{{ published }}</span>
+          </h4>
+        </header>
+        <div class="c-tags c-tags-postList">
           {{#each tags}}
-            <span class="c-tags__tag"><a href="/tags/{{tag}}">{{tag}}</a></span>
+            <a class="c-tags__tag" href="/tags/{{tag}}">{{tag}}</a>
           {{/each}}
         </div>
       </div>
