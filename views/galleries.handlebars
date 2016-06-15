@@ -19,7 +19,23 @@
   <p class="text-green"> Fotografie: <a class="link" href="https://unsplash.com/">unsplash.com</a></p>
 </div>
 
-<div id="js-modal" class="modal"></div>
+<div id="js-modal" class="c-modal">
+  <div class="c-modal__container">
+    <img id="js-img" class="c-modal__img" src="">
+    <div id="js-close" class="c-modal__close">
+      <svg fill="#ffffff" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>`
+    </div>
+    <div class="c-modal__ctrls">
+      <div id="js-pevious" class="c-modal__previous"></div>
+      <div id="js-next" class="c-modal__next"></div>
+    </div>
+ </div>
+</div>
+
+
 <script id="js-modal-tmp" type="text/x-handlebars-template">
   <div class="modal__container">
     <img id="js-modal-img" class="c-modal__img" alt="" src="{{ url }}">

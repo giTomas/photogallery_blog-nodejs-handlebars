@@ -1,7 +1,7 @@
 [
   {"id": "1",
-  "urlThumb": "public/img/thumb-1.jpeg",
-  "urlImg": "public/img/img-1",
+  "urlThumb": "public/img/posts/thumb-1.jpeg",
+  "urlImg": "public/img/posts/img-1",
   "description": "image-1"
   },{
   "id": "2",

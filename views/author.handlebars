@@ -1,6 +1,21 @@
 
 <div class="l-row">
-    <h2>Author profile</h2>
+    <div class="l-item-1-1">
+      <img class="c-author__img" src="/public/img/authors/{{ profile.image }}"alt="">
+      <div class="c-author__profile">
+        <h2 class="c-author__name"> {{ profile.name }}</h2>
+        <p class="c-author__about"> {{ profile.about }}</p>
+        <a class="c-author__articles" href="/posts-by-author/{{ profile.id }}">Články autora</a>
+
+        <div class="c-tags__container">
+          <span>Tagy autora:</span>
+          {{#each allTags}}
+          <a class="c-tags__tag" href="/tags/{{ this }}">{{this}}</a>
+          {{/each}}
+        </div>
+
+      </div>
+    </div>
 
 
 </div>

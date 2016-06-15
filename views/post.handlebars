@@ -1,17 +1,21 @@
 <div class="l-row">
   <div class="c-post">
-    <img class="c-post__img" src="/{{ blog.img }}" alt="">
-    <div class="c-text__body">
+    <header class=c-post__header>
       <h2 class="c-post__title">{{ blog.title }} </h2>
       <h3 class="c-post__pusblished">{{ blog.published }}</h3>
       <div class="c-tags">
         {{#each blog.tags}}
           <a class="c-tags__tag" href="/tags/{{tag}}">{{tag}}</a>
         {{/each}}
-      </div>
-
+     <img class="c-post__img" src="/{{ blog.img }}" alt="">
+    </header>
+    <div class="c-text__body">
       {{#each blog.body}}
-        <p class="c-text__para">{{p}}</p>
+        {{# if h }}
+          <h4 class="c-post__subtitle">{{h}}</h4>
+        {{ else }}
+          <p class="c-text__para">{{p}}</p>
+        {{/if}}
       {{/each}}
     </div>
   </div>

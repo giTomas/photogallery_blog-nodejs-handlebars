@@ -1,17 +1,17 @@
 [{
 	"id": "1",
 	"urlThumb": "public/img/thumb-1.jpeg",
-	"urlImg": "public/img/img-1",
+	"urlImg": "public/img/img-1.jpeg",
 	"description": "image-1"
 }, {
 	"id": "2",
 	"urlThumb": "public/img/thumb-2.jpeg",
-	"urlImg": "public/img/img-2",
+	"urlImg": "public/img/img-2.jpeg",
 	"description": "image-2"
 }, {
 	"id": "3",
 	"urlThumb": "public/img/thumb-3.jpeg",
-	"urlImg": "public/img/img-2",
+	"urlImg": "public/img/img-2.jpeg",
 	"description": "image-3"
 }, {
 	"id": "4",

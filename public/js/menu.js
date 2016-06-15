@@ -7,6 +7,22 @@
     const menu  = document.getElementById('js-menu');
     // console.log(menu);
 
+
+  //anim
+
+  function fadeOut(el, display) {
+    el.style.opacity = 0;
+    el.style.display = display || "flex";
+
+    (function fade(){
+      var val = parseFloat(el.style.opacity);
+      if (!((val += 0.1) > 1 )) {
+        el.style.opacity = val;
+        requestAnimationFrame(fade);
+      }
+    })();
+  }
+
   // TODO display fn
     // close fn
     function openFn() {
@@ -38,12 +54,15 @@
   // TODO event handlers
 
 
-    const closeHandler = function(event){
+    const closeHandler = function(){
         closeFn();
     };
 
-    const openHandler = function(event){
+    const openHandler = function(){
         openFn();
+        // open.classList.toggle("navicon-is-hidden");
+        // close.classList.toggle("navicon-is-hidden");
+        // fadeOut(menu);
     };
 
   // attach event handlers
