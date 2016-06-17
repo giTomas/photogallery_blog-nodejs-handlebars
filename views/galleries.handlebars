@@ -1,10 +1,11 @@
 <!-- <h1> Galéria </h1> -->
 <div class="l-row">
+  <h2 class="c-section__title">Galéria</h2>
   {{#each imgs}}
     <div class="l-item-1-4 c-image js-image" data-url="{{ urlImg }}">
-      <img src="{{ urlThumb }}">
+      <img src="{{ urlThumb }}" alt="{{ description }}">
       <figcaption class="c-image__figcaption">
-        <h2 class="c-image__description">{{ description }}
+        <h3 class="c-image__description">{{ description }}
           <span class="c-image__icon">
             <svg fill="#FFFFFF" height="34" viewBox="0 0 24 24" width="34" xmlns="http://www.w3.org/2000/svg">
                 <path d="M24 24H0V0h24v24z" fill="none"/>
@@ -12,26 +13,51 @@
             </svg>
           </span>
 
-        </h2>
+        </h3>
       </figcaption>
     </div>
   {{/each}}
+
   <p class="text-green"> Fotografie: <a class="link" href="https://unsplash.com/">unsplash.com</a></p>
 </div>
 
 <div id="js-modal" class="c-modal">
-  <div class="c-modal__container">
+  <div id="js-container" class="c-modal__container">
     <img id="js-img" class="c-modal__img" src="">
     <div id="js-close" class="c-modal__close">
       <svg fill="#ffffff" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
         <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
         <path d="M0 0h24v24H0z" fill="none"/>
-      </svg>`
+      </svg>
     </div>
+
     <div class="c-modal__ctrls">
-      <div id="js-pevious" class="c-modal__previous"></div>
-      <div id="js-next" class="c-modal__next"></div>
+      <div id="js-previous" class="c-modal__ctrlBtn">
+        <svg fill="#ffffff" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"/>
+          <path d="M0-.5h24v24H0z" fill="none"/>
+        </svg>
+      </div>
+      <div id="js-stop" class="c-modal__ctrlBtn">
+        <svg fill="#ffffff" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            <path d="M0 0h24v24H0z" fill="none"/>
+        </svg>
+      </div>
+      <div id="js-play" class="c-modal__ctrlBtn">
+        <svg fill="#ffffff" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 5v14l11-7z"/>
+            <path d="M0 0h24v24H0z" fill="none"/>
+        </svg>
+      </div>
+      <div id="js-next" class="c-modal__ctrlBtn">
+        <svg fill="#ffffff" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/>
+          <path d="M0-.25h24v24H0z" fill="none"/>
+        </svg>
+      </div>
     </div>
+
  </div>
 </div>
 

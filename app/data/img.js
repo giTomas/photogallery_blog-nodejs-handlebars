@@ -79,4 +79,10 @@ exports.imgList = [
   "urlImg": "public/img/img-16",
   "description": "image-16"
   }
+  },{
+  "id": "17",
+  "urlThumb": "public/img/thumb-17.jpeg",
+  "urlImg": "public/img/img-17",
+  "description": "image-17"
+  }
 ]

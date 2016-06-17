@@ -1,29 +1,27 @@
 
 <div class="l-row l-space">
-  <h2 class="c-section__title"> Posty od </h2>
+  <h2 class="c-section__title"> {{ author }} </h2>
   {{#each posts}}
   <div class="l-item-1-2 c-postList">
-    <div class="c-postList__container">
-      <div class="c-postList__thumb">
-        <img  src="/{{ thumb }}" alt="">
+      <div class="l-item-gr-1-1">
+        <img  class="c-postList__thumb" src="/{{ thumb }}" alt="">
       </div>
-      <div class="c-postList__text">
+      <div class="l-item-gr-1-2 c-postList__text">
         <header>
           <a href="/post/{{id}}">
-            <h3 class="c-postList__title">{{ title }}</h3>
+            <h4 class="c-postList__title">{{ title }}</h4>
           </a>
           <h4 class="c-postList__authorPub">
             <a href="/authors/{{authorId}}" class="c-postList__author">{{ author }}</a>
             <span class="c-postList__publication">{{ published }}</span>
           </h4>
         </header>
-        <div class="c-tags c-tags-postList">
+        <div class="c-tags__postList">
           {{#each tags}}
             <a class="c-tags__tag" href="/tags/{{tag}}">{{tag}}</a>
           {{/each}}
         </div>
       </div>
-    </div>
   </div>
   {{/each}}
 

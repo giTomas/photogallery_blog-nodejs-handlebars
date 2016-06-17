@@ -1,15 +1,19 @@
-<div class="l-row">
+<div class="l-row-2">
   <div class="c-post">
+
+    <img class=" c-post__img" src="/{{ blog.img }}" alt="">
     <header class=c-post__header>
       <h2 class="c-post__title">{{ blog.title }} </h2>
-      <h3 class="c-post__pusblished">{{ blog.published }}</h3>
-      <div class="c-tags">
+      <h3 class="c-post__published"><a href="/authors/{{blog.authorId}}">{{blog.author}}</a> {{ blog.published }}</h3>
+      <div class="c-post__tags">
+
         {{#each blog.tags}}
-          <a class="c-tags__tag" href="/tags/{{tag}}">{{tag}}</a>
+          <a class="c-tags__tag tag-postList" href="/tags/{{tag}}">{{tag}}</a>
         {{/each}}
-     <img class="c-post__img" src="/{{ blog.img }}" alt="">
+      </div>
     </header>
-    <div class="c-text__body">
+
+    <div class="c-post__text">
       {{#each blog.body}}
         {{# if h }}
           <h4 class="c-post__subtitle">{{h}}</h4>
@@ -18,5 +22,6 @@
         {{/if}}
       {{/each}}
     </div>
+
   </div>
 </div>

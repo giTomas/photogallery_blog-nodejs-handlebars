@@ -1,0 +1,32 @@
+<div class="l-row c-contact">
+    <h2 class="c-section__title">{{ title }}</h2>
+
+    <form class="c-form" action="/contact/message" method="POST">
+
+      <div class="c-form__container">
+
+        <div class="c-form__item">
+          <input type="text" id="first_name" name="first_name" required placeholder=" ">
+          <label for="first_name">First name</label>
+        </div>
+
+        <div class="c-form__item">
+          <input type="text" id="last_name" name="last_name" required placeholder=" ">
+          <label for="last_name">Last name</label>
+        </div>
+
+        <div class="c-form__item">
+          <input type="email" id="email" name="email" required placeholder=" ">
+          <label for="first_name">Email Adress</label>
+        </div>
+
+        <div class="c-form__item">
+          <input type="text" id="message" name="message" required placeholder=" ">
+          <label for="message">Message</label>
+        </div>
+    </div>
+      <input type="submit" value="Send Message"/>
+
+
+    <form>
+</div>
