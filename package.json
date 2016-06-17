@@ -1,11 +1,22 @@
 {
   "name": "photogalleries-blog-with-json-data",
   "version": "1.0.0",
+  "description": "A simple app with express routing",
   "main": "server.js",
   "author": "giTo",
+  "repositiory": {
+    "type": "git",
+    "url": "https://github.com/giTomas/photogallery_blog-nodejs-handlebars"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
-    "express-handlebars": "^3.0.0"
-  }
+    "express-handlebars": "^3.0.0",
+    "nodemailer": "^2.4.2",
+    "nodemailer-smtp-transport": "^2.5.0"
+  },
+  "license": "MIT"
 }

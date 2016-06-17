@@ -15,10 +15,10 @@
   let playId;
 
   //helpers && animations
-  // get data atrt
-  function getData(el) {
+  // get data attr
+  function getData(el, attr) {
     //return el.dataset.url;
-    return el.getAttribute("data-url");
+    return el.getAttribute(attr);
   }
 
   // modal slide down
@@ -34,7 +34,7 @@
   //-> get url of image & find his place in the array == value of currenImg & display image
   const imgShowHandler = function(event) {
     let eTarget = event.currentTarget;
-    let url     = getData(eTarget);
+    let url     = getData(eTarget, "data-url");
     currentImg  = allUrls.indexOf(url);
     img.setAttribute("src", url)
     modal.style.display = "flex";
@@ -86,26 +86,18 @@
     }
 
   // ctrls handlers
-  const nextHandler = function(){
-    nextImg();
-  };
+  const nextHandler = () =>  nextImg();
 
-  const previousHandler = function(){
-    previousImg();
-  };
+  const previousHandler = () => previousImg();
 
-  const playHandler = function(){
-    playImgs();
-  };
+  const playHandler = () => playImgs();
 
-  const stopHandler = function(){
-    stopImgs();
-  };
+  const stopHandler = () => stopImgs();
 
   //attach event handlers && get all datas && populate array of URLS for future use
   for (let i = 0; i <imgs.length; i++) {
     imgs[i].addEventListener('click', imgShowHandler, false);
-    let pUrl = getData(imgs[i]);
+    let pUrl = getData(imgs[i], "data-url");
     allUrls.push(pUrl)
   }
 

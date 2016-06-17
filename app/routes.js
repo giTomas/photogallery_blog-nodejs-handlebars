@@ -1,6 +1,7 @@
 const contentEngine  = require('./contentEngine');   // nutne!!!
+const mailer         = require('./mailer');
 
-module.exports = function(router){
+module.exports = (router) => {
 
   //middleware demonstration
   router.use((req, res, next) => {
@@ -9,45 +10,41 @@ module.exports = function(router){
     next();
   })
 
-  router.post('/contact/message', function(req, res) {
-    console.log(req.body);
-    res.send('processing');
-
-  });
+  router.post('/contact/message', mailer.handleSendMail);
 
   router.get('/', (req, res) => res.render('home', {title: "Úvod"}));
 
   router.get('/about', (req, res) => res.render('about', {title: "O stránke"}));
 
-  router.get('/blog', function(req, res){
-    var tags = contentEngine.getAllTags();
+  router.get('/blog', (req, res) => {
+    const tags = contentEngine.getAllTags();
     res.render('blog', {title: "Blog", posts: contentEngine.getPosts(), allTags: tags});
   });
 
-  router.get('/galleries', function(req, res){
+  router.get('/galleries', (req, res) => {
     res.render('galleries', { title: "Galéria", imgs: contentEngine.getImgs()});
   });
 
-  router.get('/post/:id', function(req, res){
-    var post = contentEngine.getPost(req.params.id);
+  router.get('/post/:id', (req, res) => {
+    const post = contentEngine.getPost(req.params.id);
     res.render('post', { title: post.title, blog: post });
-  })
+  });
 
-  router.get('/tags/:id', function(req, res){
-    var postsByTag = contentEngine.getPostsByTag(req.params.id);
+  router.get('/tags/:id', (req, res) => {
+    const postsByTag = contentEngine.getPostsByTag(req.params.id);
     res.render('tag', { title: req.params.id, posts: postsByTag });
-  })
+  });
 
-  router.get('/authors/:id', function(req, res){
-    var author = contentEngine.getAuthor(req.params.id);
-    var tags = contentEngine.getAllTagsOfAuthor(req.params.id);
-    res.render('author', { title: req.params.id, profile: author, allTags: tags });
-  })
+  router.get('/authors/:id', (req, res) => {
+    const author = contentEngine.getAuthor(req.params.id);
+    const tagsOfAuthor = contentEngine.getAllTagsOfAuthor(req.params.id);
+    res.render('author', { title: req.params.id, profile: author, allTags: tagsOfAuthor });
+  });
 
-  router.get('/posts-by-author/:id', function(req, res){
-    var postsByAuthor = contentEngine.getAllPostsByAuthor(req.params.id);
+  router.get('/posts-by-author/:id', (req, res) => {
+    const postsByAuthor = contentEngine.getAllPostsByAuthor(req.params.id);
     res.render('posts-by-author', { title: req.params.id, posts: postsByAuthor, author: postsByAuthor[0]['author'] });
-  })
+  });
 
   router.get('/tags-of-author/:id', (req, res) => res.render('posts-by-author', { title: req.params.id }));
 
