@@ -1,8 +1,8 @@
-const nodemailer      = require('nodemailer');
-const smtpTransporter = require('nodemailer-smtp-transport');
+var nodemailer      = require('nodemailer');
+var smtpTransporter = require('nodemailer-smtp-transport');
 
 exports.handleSendMail = (req, res) => {
-  const transporter = nodemailer.createTransport({
+  var transporter = nodemailer.createTransport({
     service: process.env.NODEMAILER_SERVICE,
     auth: {
       user: process.env.NODEMAILER_USER,
@@ -11,7 +11,7 @@ exports.handleSendMail = (req, res) => {
     }
   });
 
-  const mailOptions = {
+  var mailOptions = {
     to: "tk.develtest@gmail.com",
     subject: req.body.subject,
     // text: req.body.message + req.body.last__name,

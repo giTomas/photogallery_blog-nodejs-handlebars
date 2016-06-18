@@ -1,11 +1,11 @@
-const contentEngine  = require('./contentEngine');   // nutne!!!
-const mailer         = require('./mailer');
+var contentEngine  = require('./contentEngine');   // nutne!!!
+var mailer         = require('./mailer');
 
 module.exports = (router) => {
 
   //middleware demonstration
   router.use((req, res, next) => {
-    const time = new Date();
+    var time = new Date();
     console.log(req.method, req.url  + " " +  time.toString());
     next();
   })
@@ -17,7 +17,7 @@ module.exports = (router) => {
   router.get('/about', (req, res) => res.render('about', {title: "O stránke"}));
 
   router.get('/blog', (req, res) => {
-    const tags = contentEngine.getAllTags();
+    var tags = contentEngine.getAllTags();
     res.render('blog', {title: "Blog", posts: contentEngine.getPosts(), allTags: tags});
   });
 
@@ -26,23 +26,23 @@ module.exports = (router) => {
   });
 
   router.get('/post/:id', (req, res) => {
-    const post = contentEngine.getPost(req.params.id);
+    var post = contentEngine.getPost(req.params.id);
     res.render('post', { title: post.title, blog: post });
   });
 
   router.get('/tags/:id', (req, res) => {
-    const postsByTag = contentEngine.getPostsByTag(req.params.id);
+    var postsByTag = contentEngine.getPostsByTag(req.params.id);
     res.render('tag', { title: req.params.id, posts: postsByTag });
   });
 
   router.get('/authors/:id', (req, res) => {
-    const author = contentEngine.getAuthor(req.params.id);
-    const tagsOfAuthor = contentEngine.getAllTagsOfAuthor(req.params.id);
+    var author = contentEngine.getAuthor(req.params.id);
+    var tagsOfAuthor = contentEngine.getAllTagsOfAuthor(req.params.id);
     res.render('author', { title: req.params.id, profile: author, allTags: tagsOfAuthor });
   });
 
   router.get('/posts-by-author/:id', (req, res) => {
-    const postsByAuthor = contentEngine.getAllPostsByAuthor(req.params.id);
+    var postsByAuthor = contentEngine.getAllPostsByAuthor(req.params.id);
     res.render('posts-by-author', { title: req.params.id, posts: postsByAuthor, author: postsByAuthor[0]['author'] });
   });
 
