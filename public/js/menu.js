@@ -2,9 +2,9 @@
   "use strict";
 
   //get elements
-    const close = document.getElementById('js-menu-close');
-    const open  = document.getElementById('js-menu-open');
-    const menu  = document.getElementById('js-menu');
+    var close = document.getElementById('js-menu-close');
+    var open  = document.getElementById('js-menu-open');
+    var menu  = document.getElementById('js-menu');
 
 
   // display fn
@@ -27,11 +27,11 @@
         menu.style.display = "" }, 340);
     }
 
-    const closeHandler = function(){
+    var closeHandler = function(){
         closeFn();
     };
 
-    const openHandler = function(){
+    var openHandler = function(){
         openFn();
     };
 

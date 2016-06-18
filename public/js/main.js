@@ -1,16 +1,16 @@
 (function(){
   "use strict";
 
-  const imgs      = document.querySelectorAll('.js-image');
-  const modal     = document.getElementById('js-modal');
-  const close     = document.getElementById('js-close');
-  const img       = document.getElementById('js-img');
-  const container = document.getElementById('js-container');
-  const next      = document.getElementById('js-next');
-  const previous  = document.getElementById('js-previous');
-  const play      = document.getElementById('js-play');
-  const stop      = document.getElementById('js-stop');
-  const allUrls   = [];
+  var imgs      = document.querySelectorAll('.js-image');
+  var modal     = document.getElementById('js-modal');
+  var close     = document.getElementById('js-close');
+  var img       = document.getElementById('js-img');
+  var container = document.getElementById('js-container');
+  var next      = document.getElementById('js-next');
+  var previous  = document.getElementById('js-previous');
+  var play      = document.getElementById('js-play');
+  var stop      = document.getElementById('js-stop');
+  var allUrls   = [];
   let currentImg;
   let playId;
 
@@ -22,7 +22,7 @@
   }
 
   // modal slide down
-  const slideDownUp = function() {
+  var slideDownUp = function() {
     if (modal.classList.contains('is-sliding-down')) {
       modal.classList.remove('is-sliding-down');
     } else {
@@ -32,7 +32,7 @@
 
   //event handler open gallery
   //-> get url of image & find his place in the array == value of currenImg & display image
-  const imgShowHandler = function(event) {
+  var imgShowHandler = function(event) {
     let eTarget = event.currentTarget;
     let url     = getData(eTarget, "data-url");
     currentImg  = allUrls.indexOf(url);
@@ -44,7 +44,7 @@
     }, 240);
   }
   //close gallery
-  const closeHandler = function() {
+  var closeHandler = function() {
     container.style.opacity = "";
     stopImgs();
     setTimeout(slideDownUp, 500);
@@ -86,13 +86,13 @@
     }
 
   // ctrls handlers
-  const nextHandler = () =>  nextImg();
+  var nextHandler = () =>  nextImg();
 
-  const previousHandler = () => previousImg();
+  var previousHandler = () => previousImg();
 
-  const playHandler = () => playImgs();
+  var playHandler = () => playImgs();
 
-  const stopHandler = () => stopImgs();
+  var stopHandler = () => stopImgs();
 
   //attach event handlers && get all datas && populate array of URLS for future use
   for (let i = 0; i <imgs.length; i++) {
