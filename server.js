@@ -2,8 +2,8 @@
 const express           = require('express');
 const app               = express(app);
 const bodyParser        = require('body-parser');
-const server_port       = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-const server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+const port              = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+const ip                = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 const path              = require('path');
 const exphbs            = require('express-handlebars');
 const router            =  express.Router();
@@ -20,5 +20,5 @@ app.use( "/public", express.static(path.join(__dirname + '/public')));
 require('./app/routes')(router);
 app.use('/', router);
 
-app.listen(server_port, server_ip_address);
-console.log('App is listennig on port' + ' ' + server_port);
+app.listen(port, ip);
+console.log('App is listennig on port ' + port + ' ' + ip);
