@@ -21,4 +21,4 @@ require('./app/routes')(router);
 app.use('/', router);
 
 app.listen(server_port, server_ip_address);
-console.log('App is listennig on port 8080');
+console.log('App is listennig on port' + ' ' +server_port);
