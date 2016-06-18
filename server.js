@@ -1,16 +1,16 @@
 
 var express           = require('express');
 var app               = express(app);
-var bodyParser        = require('body-parser');
+// var bodyParser        = require('body-parser');
 var port              = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var ip                = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 var path              = require('path');
 var exphbs            = require('express-handlebars');
-var router            =  express.Router();
+var router            = express.Router();
 
 //CONFIG------------------------------------------------------
-app.use(bodyParser.urlencoded({'extended':'true'}));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({'extended':'true'}));
+// app.use(bodyParser.json());
 //app.use(bodyParser.json({ type: 'application/vnd.api+json'}));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');

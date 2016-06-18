@@ -1,7 +1,7 @@
 // var contentEngine  = require('./contentEngine');   // nutne!!!
 // var mailer         = require('./mailer');
 
-module.exports = (router) => {
+module.exports = function(router){
 
   //middleware demonstration
   /*router.use((req, res, next) => {
@@ -12,9 +12,11 @@ module.exports = (router) => {
 
   // router.post('/contact/message', mailer.handleSendMail);
 
-  router.get('/', (req, res) => res.render('home', {title: "Úvod"}));
+  router.get('/', function(req, res){
+     res.render('home', {title: "Úvod"})
+   });
 
-  router.get('/about', (req, res) => res.render('about', {title: "O stránke"}));
+  // router.get('/about', (req, res) => res.render('about', {title: "O stránke"}));
 
   /*router.get('/blog', (req, res) => {
     var tags = contentEngine.getAllTags();
@@ -49,6 +51,6 @@ module.exports = (router) => {
   /*router.get('/tags-of-author/:id', (req, res) => res.render('posts-by-author', { title: req.params.id }));
 */
   // get contact
-  router.get('/contact', (req, res) => res.render('contact', { title: "Kontakt" }));
+  // router.get('/contact', (req, res) => res.render('contact', { title: "Kontakt" }));
 
 }
