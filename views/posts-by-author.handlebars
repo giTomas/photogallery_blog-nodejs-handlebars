@@ -1,6 +1,7 @@
 
 <div class="l-row l-space">
   <h2 class="c-section__title"> {{ author }} </h2>
+
   {{#each posts}}
   <div class="l-item-1-2 c-postList">
       <div class="l-item-gr-1-1">
@@ -17,9 +18,11 @@
           </h4>
         </header>
         <div class="c-tags__postList">
+
           {{#each tags}}
             <a class="c-tags__tag" href="/tags/{{tag}}">{{tag}}</a>
           {{/each}}
+          
         </div>
       </div>
   </div>

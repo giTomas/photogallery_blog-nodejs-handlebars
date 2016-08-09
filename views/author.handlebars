@@ -11,9 +11,11 @@
           <a class="c-author__articles" href="/posts-by-author/{{ profile.id }}">Všetky posty</a>
 
           <div class="c-tags__container c-tags-author">
+
             {{#each allTags}}
-            <a class="c-tags__tag" href="/tags/{{ this }}">{{this}}</a>
+              <a class="c-tags__tag" href="/tags/{{ this }}">{{this}}</a>
             {{/each}}
+
           </div>
 
         </div>

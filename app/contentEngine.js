@@ -1,6 +1,6 @@
-var img     = require('./data/img.json');    //load JSON data
-var blog    = require('./data/blog.json');
-var authors = require('./data/authors.json');
+const img     = require('./data/img.json');    //load JSON data
+const blog    = require('./data/blog.json');
+const authors = require('./data/authors.json');
 
 // search functions
 //----------------------------------------------------------------------------->

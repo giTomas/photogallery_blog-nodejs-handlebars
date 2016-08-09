@@ -1,17 +1,17 @@
 
-var express           = require('express');
-var app               = express(app);
-// var bodyParser        = require('body-parser');
-var port              = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var ip                = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
-var path              = require('path');
-var exphbs            = require('express-handlebars');
-var router            = express.Router();
+const express           = require('express');
+const app               = express(app);
+const bodyParser        = require('body-parser');
+const port              = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3001;
+const ip                = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+const path              = require('path');
+const exphbs            = require('express-handlebars');
+const router            = express.Router();
 
 //CONFIG------------------------------------------------------
-// app.use(bodyParser.urlencoded({'extended':'true'}));
-// app.use(bodyParser.json());
-//app.use(bodyParser.json({ type: 'application/vnd.api+json'}));
+app.use(bodyParser.urlencoded({'extended':'true'}));
+app.use(bodyParser.json());
+app.use(bodyParser.json({ type: 'application/vnd.api+json'}));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 app.use( "/public", express.static(path.join(__dirname + '/public')));
